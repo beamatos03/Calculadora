@@ -15,21 +15,28 @@
         body{
             background-color: #C9C3E8;
         }
+
+        #content{
+            padding: 5%;
+            margin: auto;
+        }
     </style>
 </head>
 <body>
     <h1>Calculadora básica</h1>
     <form>
-        <input type="text" id="num1">
-        +
-        <input type="text" id="num2">
-        <button type="button" onclick="somar()">Somar</button>
-        <input type="text" readonly id="result">
+        <div id="contents">
+            <input type="text" id="num1"><br>
+            +<br>
+            <input type="text" id="num2"><br>
+            <button type="button" onclick="somar()">Somar</button><br>
+            <input type="text" readonly id="result">
+        </div>
     </form>
     <script>
         function somar(){
             var num1, num2, resp;
-            num1 = parseFloat(document.getElementById("num1").value);
+            num1 = parseFloat(document.getElementById("num1").value); 
             num2 = parseFloat(document.getElementById("num2").value);
 
             resp = num1 + num2;
