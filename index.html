@@ -7,35 +7,63 @@
     <title>Página inicial</title>
     <style>
         form{
-            background-color: #6b5b95;
+            background-color: rgb(148, 108, 230, 0.25);
+            padding: 2%;
+            width: 25%;
+            height: auto;
             margin: 0 auto;
-            width: 50%;
-            height: 200px
+            border-radius: 15px;
+            
         }
+        #contents{
+            
+            display: block;
+            justify-content: center;
+            text-align: center;
+        }
+
         body{
             background-color: #C9C3E8;
         }
-
-        #content{
-            padding: 5%;
-            margin: auto;
+        
+        .btn{
+            margin: 2px;
+        }
+        #btns{
+            background-color: blue;
         }
     </style>
 </head>
 <body>
-    <h1>Calculadora básica</h1>
+    <div id="contents">
+    <h1>CALCULADORA</h1>
     <form>
-        <div id="contents">
-            <input type="text" id="num1"><br>
-            +<br>
-            <input type="text" id="num2"><br>
-            <button type="button" onclick="somar()">Somar</button><br>
+
+            <input type="text" id="num1">
+            <input type="text" id="num2">
+
+            <div id="btns">
+                <div class="btn">
+                    <button type="button" onclick="somar()">Somar</button>
+                </div>
+                <div class="btn">
+                    <button type="button" onclick="subtrair()">Subtrair</button>
+                </div>
+                <div class="btn">
+                    <button type="button" onclick="multiplicar()">Multiplicar</button>
+                </div>
+                <div class="btn">
+                    <button type="button" onclick="dividir()">Dividir</button>
+                </div>
+        
+            </div>
             <input type="text" readonly id="result">
         </div>
     </form>
     <script>
+
         function somar(){
-            var num1, num2, resp;
+            var resp, num1, num2;
             num1 = parseFloat(document.getElementById("num1").value); 
             num2 = parseFloat(document.getElementById("num2").value);
 
@@ -44,6 +72,38 @@
             document.getElementById("result").value = resp;
             
         }
+        function subtrair(){
+            var num1, num2, resp;
+            num1 = parseFloat(document.getElementById("num1").value); 
+            num2 = parseFloat(document.getElementById("num2").value);
+
+            resp = num1 - num2;
+
+            document.getElementById("result").value = resp;
+            
+        }
+
+        function multiplicar(){
+            var resp, num1, num2;
+            num1 = parseFloat(document.getElementById("num1").value); 
+            num2 = parseFloat(document.getElementById("num2").value);
+
+            resp = num1*num2;
+
+            document.getElementById("result").value = resp;
+            
+        }
+
+        function dividir(){
+            var resp, num1, num2;
+            num1 = parseFloat(document.getElementById("num1").value); 
+            num2 = parseFloat(document.getElementById("num2").value);
+            resp = num1/num2;
+
+            document.getElementById("result").value = resp;
+            
+        }
+
     </script>
 </body>
 </html>
